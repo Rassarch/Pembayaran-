@@ -20,16 +20,19 @@ while True:
         if kelas == "X":
             total_bayar += 3200000
             rincian_pembayaran += "Komite: Rp 3.200.000\n"
+        
         elif kelas == "XI":
-            print("Pilih pembayaran:")
-            print("1. Komite (Rp 2.900.000)")
-            print("2. KI")
-            pilihan = input("Masukkan pilihan (1/2): ")
-
-            if pilihan == "1":
+            print("Anda bisa membayar Komite dan KI.")
+            
+            # Pembayaran Komite
+            bayar_komite = input("Apakah Anda ingin membayar Komite? (Y/N): ").upper()
+            if bayar_komite == "Y":
                 total_bayar += 2900000
                 rincian_pembayaran += "Komite: Rp 2.900.000\n"
-            elif pilihan == "2":
+            
+            # Pembayaran KI
+            bayar_ki = input("Apakah Anda ingin membayar KI? (Y/N): ").upper()
+            if bayar_ki == "Y":
                 print("Pilih tipe KI:")
                 print("1. Luar Provinsi (Rp 1.900.000)")
                 print("2. Dalam Provinsi (Rp 300.000)")
@@ -44,16 +47,19 @@ while True:
                     rincian_pembayaran += "KI Dalam Provinsi: Rp 300.000\n"
                 elif pilihan_ki == "3":
                     rincian_pembayaran += "KI Mandiri: Gratis\n"
-        elif kelas == "XII":
-            print("Pilih pembayaran:")
-            print("1. Komite (Rp 2.800.000)")
-            print("2. PKL")
-            pilihan = input("Masukkan pilihan (1/2): ")
 
-            if pilihan == "1":
+        elif kelas == "XII":
+            print("Anda bisa membayar Komite dan PKL.")
+            
+            # Pembayaran Komite
+            bayar_komite = input("Apakah Anda ingin membayar Komite? (Y/N): ").upper()
+            if bayar_komite == "Y":
                 total_bayar += 2800000
                 rincian_pembayaran += "Komite: Rp 2.800.000\n"
-            elif pilihan == "2":
+            
+            # Pembayaran PKL
+            bayar_pkl = input("Apakah Anda ingin membayar PKL? (Y/N): ").upper()
+            if bayar_pkl == "Y":
                 print("Pilih lokasi PKL:")
                 print("1. Dalam Kota (Rp 250.000)")
                 print("2. Luar Kota (Rp 500.000)")
@@ -108,4 +114,4 @@ while True:
         break
     else:
         print("Input tidak valid. Harap masukkan 'Y' atau 'N'.")
-      
+                
