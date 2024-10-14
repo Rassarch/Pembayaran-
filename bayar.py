@@ -1,19 +1,17 @@
 from datetime import datetime
-
-# Block utama program
 print("=== Program Pembayaran Siswa SMK Negeri 3 Metro ===")
 
 while True:
-    lanjut_bayar = input("Apakah Anda ingin melakukan pembayaran? (Y/N): ").upper()
+    bayar = input("Apakah Anda ingin melakukan pembayaran? (Y/N): ").upper()
 
-    if lanjut_bayar == "Y":
-        # Input identitas siswa
+    if bayar == "Y":
+        # Menginput identitas siswa
         nis = input("Masukkan NIS: ")
         nama = input("Masukkan Nama: ")
         kelas = input("Masukkan Kelas (X/XI/XII): ").upper()
         jurusan = input("Masukkan Jurusan: ")
 
-        # Hitung total pembayaran sesuai kelas
+        # Menghitung total pembayaran sesuai kelas
         total_bayar = 0
         rincian_pembayaran = ""
         
@@ -93,23 +91,25 @@ while True:
                 status_pembayaran = "Cicil"
                 total_bayar -= jumlah_cicilan
 
+        
+        
+
         # Cetak struk pembayaran
-        tanggal_pembayaran = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        tanggal_pembayaran = datetime.now().strftime('%d-%m-%Y')
         print("\n===== STRUK PEMBAYARAN =====")
         print(f"Nama Siswa   : {nama}")
         print(f"NIS          : {nis}")
-        print(f"Kelas        : {kelas} {jurusan}")
+        print(f"Kelas        : {kelas}")
+        print(f"Jurusan      :  {jurusan}")
         print(f"Tanggal Bayar: {tanggal_pembayaran}")
         print("\nRincian Pembayaran:")
         print(rincian_pembayaran)
-        if status_pembayaran == "Cicil":
-            print(f"Jumlah Cicilan Dibayar: Rp {jumlah_cicilan:,}")
-            print(f"Sisa Pembayaran       : Rp {total_bayar:,}")
-        print(f"Total Bayar  : Rp {jumlah_cicilan + total_bayar:,}")
-        print(f"Status       : {status_pembayaran}")
+        if status_pembayaran == "Cicil":   
+            print(f"Total Bayar             : Rp {jumlah_cicilan:,}")
+        print(f"Kekurangan              : Rp {total_bayar:,}")
+        print(f"Status                  : {status_pembayaran}")
         print("=============================")
-
-    elif lanjut_bayar == "N":
+    elif bayar == "N":
         print("Terima kasih telah menggunakan program pembayaran.")
         break
     else:
